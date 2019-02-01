@@ -29,6 +29,7 @@ def thirdMaxTime(arr, k):
     start = time.time()
     ans = thirdMax(arr, k)
     end = time.time()
+    #print(ans)
     return end-start
 
 def thirdMaxHeap(arr, k):
@@ -52,7 +53,7 @@ def thirdMaxHeap(arr, k):
         queue = [0]
         maxes = [None for i in range(k)]
         while len(queue):
-            ind = queue.pop()
+            ind = queue.pop(0)
             if ind < len(heap):
                 val = heap[ind]
                 for i in range(len(maxes)):
@@ -82,6 +83,7 @@ def thirdMaxHeapTime(arr, k):
     start = time.time()
     ans = thirdMaxHeap(arr, k)
     end = time.time()
+    #print(ans)
     return end-start
 
 
@@ -89,7 +91,7 @@ def thirdMaxHeapTime(arr, k):
 # arrs = [[1,3,4,7,8,3,2,4,5,1], [1,2]]
 arrs = []
 maxInt = 1000
-lenLists = [10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000]
+lenLists = [10, 100]#, 1000, 10000, 100000, 1000000, 10000000, 100000000]
 numLists = len(lenLists)
 for i in range(numLists): # generate 10 lists of length 10000 containing integers in range 0-1000
     lenList = lenLists[i]
